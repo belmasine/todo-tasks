@@ -2,7 +2,7 @@ const Task = require('../models/Task');
 
 const getTasks = async(req,res) => {
   const tasks = await Task.find({});
-  res.status(200).json({tasks});
+  res.status(200).json({ tasks});
 }
 
 const postTask = async (req,res) => {

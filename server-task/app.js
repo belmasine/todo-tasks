@@ -1,10 +1,13 @@
 const express = require('express');
 require('dotenv').config();
+const cors = require('cors');
 const app = express();
 const connectDB = require('./db/connect')
 /* routes */
-const tasks = require('./routes/tasks')
+const tasks = require('./routes/tasks');
+app.use(express.static('./public'));
 app.use(express.json());
+app.use(cors());
 app.use('/api/tasks', tasks);
 
 /* connect MongoDB */
