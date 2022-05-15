@@ -14,7 +14,7 @@
           </h5>
           <div class="task-links">
             <a 
-              :href="`about`"  
+              :href="`/edit/${item._id}`" 
               class="edit-link"
             >
               <i class="fas fa-edit" />
@@ -76,4 +76,4 @@ export default {
   flex-direction: column;  
   row-gap: 1rem;
 }
-</style>
+  </style>
