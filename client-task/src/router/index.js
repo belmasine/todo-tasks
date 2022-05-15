@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import TaskMain from '../views/TaskMain.vue';
+import TaskEdit from '../views/TaskEdit.vue';
 
 Vue.use(VueRouter);
 
@@ -13,7 +14,8 @@ const routes = [
   {
     path: '/edit/:id',
     name: 'edit',
-    component: () => import('../views/TaskEdit.vue')
+    component: TaskEdit
+    //component: () => import('../views/TaskEdit.vue')
   }
 ];
 

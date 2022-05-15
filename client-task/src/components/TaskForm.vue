@@ -2,19 +2,19 @@
     <form class="task-form">
         <h4>Todo task</h4>
         <div class="form-control">
-        <input
-            type="text"
-            v-model="name"
-            class="task-input"
-            placeholder="write task ..."
-        />
-        <button 
-            type="submit" 
-            class="btn submit-btn"
-            @click.prevent="submit"
-        >
-            Save
-        </button>
+            <input
+                type="text"
+                v-model="name"
+                class="task-input"
+                placeholder="write task ..."
+            />
+            <button 
+                type="submit" 
+                class="btn submit-btn"
+                @click.prevent="submit"
+            >
+                Save
+            </button>
         </div>
         <div v-if="showAlert" class="form-alert text-success"> {{ textAlert }}</div>
     </form>
@@ -57,4 +57,4 @@ export default {
     },
 }
 </script>
-   
+
