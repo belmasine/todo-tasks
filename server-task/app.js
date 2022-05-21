@@ -5,6 +5,9 @@ const app = express();
 const connectDB = require('./db/connect')
 /* routes */
 const tasks = require('./routes/tasks');
+const errorHandler = require('./middleware/error-handler');
+
+
 app.use(express.static('./public'));
 app.use(express.json());
 app.use(cors());
@@ -12,9 +15,12 @@ app.use('/api/tasks', tasks);
 const notFound = (req, res) => {
   res.status(404).send('Route not found')
 }
+
 app.use(notFound)
+app.use(errorHandler)
+
 /* connect MongoDB */
-const port = 3000;
+const port = process.env.PORT || 3000;
         
 const start = async (credentials) => {
   try {
