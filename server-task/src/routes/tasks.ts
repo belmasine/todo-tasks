@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express'
 const router = express.Router();
 const {
     getTasks,
@@ -17,4 +17,5 @@ router.route('/:id')
     .patch(updateTask)
     .delete(deleteTask);
 
-module.exports = router;
+
+export default router;

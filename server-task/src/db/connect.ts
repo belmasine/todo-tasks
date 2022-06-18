@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+import mongoose from 'mongoose'
 
-const connectDB = (credentials) => {
+const connectDB = (credentials: string) => {
   // params for fix some warnings
   const params = {
     useNewUrlParser: true,
@@ -11,8 +11,7 @@ const connectDB = (credentials) => {
     
   return mongoose.connect(credentials, params)
     .then(() => console.log('connect to DB ...'))
-    .catch((err) => console.log(err));
-
+    .catch((err: Error) => console.log(err));
 }
 
-module.exports = connectDB;
+export default connectDB;
